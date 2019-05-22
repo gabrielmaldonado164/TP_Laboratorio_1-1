@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1558553889 source:c:\users\kevin ahumada\desktop\tp_laboratorio_1\tp1_laboratorio_1\library\calculos.c
+	<stdio.h>
+
+1558553889 source:c:\users\kevin ahumada\documentos\github\tp_laboratorio_1\tp1_laboratorio_1\library\calculos.c
+	<stdio.h>
+
+1558555662 source:c:\users\kevin ahumada\documentos\github\tp_laboratorio_1\tp1_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Library/calculos.h"
+
+1558553889 c:\users\kevin ahumada\documentos\github\tp_laboratorio_1\tp1_laboratorio_1\library\calculos.h
+
