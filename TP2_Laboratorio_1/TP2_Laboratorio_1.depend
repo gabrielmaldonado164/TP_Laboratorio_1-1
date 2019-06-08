@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1560014534 source:c:\users\kevin ahumada\documentos\github\tp2_laboratorio_1\input\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1560014864 source:c:\users\kevin ahumada\documentos\github\tp2_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Library/Empleados.h"
+
+1560012485 c:\users\kevin ahumada\documentos\github\tp2_laboratorio_1\library\empleados.h
+
+1560014909 source:c:\users\kevin ahumada\documentos\github\tp2_laboratorio_1\library\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Empleados.h"
+	"../Input/input.h"
+
+1559768415 c:\users\kevin ahumada\documentos\github\tp2_laboratorio_1\input\input.h
+
