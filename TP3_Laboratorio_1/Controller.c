@@ -19,8 +19,6 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 
     if(file!=NULL)
     {
-        fscanf(file, "%[^,],%[^,],%[^,],%[^\n]\n", buffer[0], buffer[1], buffer[2], buffer[3]);
-        ll_clear(pArrayListEmployee);
 
 
 

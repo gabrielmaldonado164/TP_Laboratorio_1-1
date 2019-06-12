@@ -85,3 +85,23 @@
 
 1533133022 c:\users\kevin ahumada\documentos\github\tp_laboratorio_1\tp3_laboratorio_1\controller.h
 
+1560339950 source:c:\users\alumno\desktop\tp_laboratorio_1\tp3_laboratorio_1\employee.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"Employee.h"
+	"LinkedList.h"
+
+1560339950 c:\users\alumno\desktop\tp_laboratorio_1\tp3_laboratorio_1\employee.h
+
+1560339950 c:\users\alumno\desktop\tp_laboratorio_1\tp3_laboratorio_1\linkedlist.h
+
+1560339950 source:c:\users\alumno\desktop\tp_laboratorio_1\tp3_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1560339950 c:\users\alumno\desktop\tp_laboratorio_1\tp3_laboratorio_1\controller.h
+

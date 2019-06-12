@@ -14,7 +14,6 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 {
     /*int cant;
     char buffer[4][50];
-    int i=0;
 
     fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", buffer[0], buffer[1], buffer[2], buffer[3]); // LECTURA FANTASMA
     ll_clear(pArrayListEmployee); // CON ESTO BORRO LA LISTA EN CASO DE QUE CONTENGA DATOS PREVIOS
@@ -31,10 +30,9 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
             }
             else
             {
-                printf("No leyo el ultimo registro");
+                printf("No se llego al final");
                 break;
             }
-            i++;
         }
     }*/
 
