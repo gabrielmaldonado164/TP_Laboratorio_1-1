@@ -18,6 +18,7 @@ int menuEmpleados()
     int option=0;
 
     system("cls");
+    printf("MENU DE EMPLEADOS\n");
     printf("1. Alta Empleado\n");
     printf("2. Modificar Empleado\n");
     printf("3. Baja Empleado\n");
@@ -26,6 +27,7 @@ int menuEmpleados()
 
     printf("Ingresar opcion: ");
     scanf("%d",&option);
+    fflush(stdin);
 
     if(option<1 || option>5)
     {
@@ -35,6 +37,32 @@ int menuEmpleados()
 
     return option;
 }
+
+int menuModificacionEmpleados()
+{
+    int option=0;
+
+    system("cls");
+    printf("MENU DE MODIFICACION DE EMPLEADO\n");
+    printf("1. Modificar Apellido\n");
+    printf("2. Modificar Nombre\n");
+    printf("3. Modificar Sueldo\n");
+    printf("4. Modificar Sector\n");
+    printf("5. Salir\n\n");
+
+    printf("Ingresar opcion: ");
+    scanf("%d",&option);
+    fflush(stdin);
+
+    if(option<1 || option>5)
+    {
+        printf("\n///Opcion Ingresada Incorrecta///\n");
+        system("pause");
+    }
+
+    return option;
+}
+
 
 int initEmployees(eEmpleado* listEmployees, int lenght)
 {
@@ -225,6 +253,9 @@ int removeEmployee(eEmpleado* listEmployee, int length, int id)
 
     return ok;
 }
+
+
+
 
 void printEmployee(eEmpleado* listEmployee, int index)
 {

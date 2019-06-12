@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Library/Empleados.h"
+#include "Input/input.h"
 
 #define TAM_EMP 1000
 
@@ -8,6 +9,8 @@ int main()
 {
     eEmpleado* lista = (eEmpleado*)malloc(sizeof(eEmpleado)*TAM_EMP);
     int contadorEmpleados=0;
+    char confirma;
+    int salir=0;
 
     if(lista==NULL)
     {
@@ -19,8 +22,6 @@ int main()
 
     initEmployees(lista,TAM_EMP);
 
-    int salir=0;
-
     do
     {
         switch(menuEmpleados())
@@ -28,36 +29,57 @@ int main()
             case 1:
                 system("cls");
 
-                altaEmpleado(lista,TAM_EMP);
-                contadorEmpleados++;
+                if(altaEmpleado(lista,TAM_EMP)==0)
+                {
+                    contadorEmpleados++;
+                }
 
                 system("pause");
                 break;
             case 2:
+                system("cls");
 
+
+                system("pause");
                 break;
             case 3:
                 system("cls");
+                if(contadorEmpleados>=1)
+                {
+                    if(bajaEmpleado(lista,TAM_EMP)==0)
+                    {
+                        contadorEmpleados--;
+                    }
 
-                bajaEmpleado(lista,TAM_EMP);
-                contadorEmpleados--;
-
+                }else
+                {
+                    printf("No hay empleados en el sistema\n\n");
+                }
                 system("pause");
                 break;
             case 4:
                 system("cls");
+                if(contadorEmpleados>=1)
+                {
+                    printEmployees(lista,TAM_EMP);
 
-                printEmployees(lista,TAM_EMP);
-
+                }else
+                {
+                    printf("No hay empleados en el sistema\n\n");
+                }
                 system("pause");
                 break;
             case 5:
-                salir=1;
+                system("cls");
+                getOptionChar(&confirma,"Confirmar salir [S/N]:","Solo puede ingresar [S/N]",'S','N');
+                if(confirma=='S')
+                {
+                    salir=1;
+                }
                 break;
 
             default:
-                system("cls");
-                system("pause");
+
                 break;
         }
 
