@@ -27,6 +27,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 
             if ( cant == 4 )
             {
+<<<<<<< HEAD
                 Employee* newEmployee= employee_new();
 
                 if(newEmployee!=NULL)
@@ -40,6 +41,13 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
                     break;
                 }
             }
+=======
+                printf("No se llego al final");
+                break;
+            }
+        }
+    }*/
+>>>>>>> 0c1a78d4375fb59966483d6bc3714f33f7a60238
 
         }while(!feof(pFile));
 
