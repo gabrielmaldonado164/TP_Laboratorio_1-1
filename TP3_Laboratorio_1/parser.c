@@ -12,33 +12,41 @@
  */
 int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 {
-    /*int cant;
+    int allOK=-1;
+    int cant;
     char buffer[4][50];
-    int i=0;
 
-    fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", buffer[0], buffer[1], buffer[2], buffer[3]); // LECTURA FANTASMA
-    ll_clear(pArrayListEmployee); // CON ESTO BORRO LA LISTA EN CASO DE QUE CONTENGA DATOS PREVIOS
-
-    while(!feof(pFile))
+    if(pFile!=NULL)
     {
-        cant= fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n", buffer[0], buffer[1], buffer[2], buffer[3]);
+        ll_clear(pArrayListEmployee);//BORRO LA LECTURA ANTERIOR
+        fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", buffer[0], buffer[1], buffer[2], buffer[3]); // LECTURA FANTASMA
 
-        if ( cant < 4 )
+        do
         {
-            if(feof(pFile))
-            {
-                break;
-            }
-            else
-            {
-                printf("No leyo el ultimo registro");
-                break;
-            }
-            i++;
-        }
-    }*/
+            cant= fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n", buffer[0], buffer[1], buffer[2], buffer[3]);
 
-    return 1;
+            if ( cant == 4 )
+            {
+                Employee* newEmployee= employee_new();
+
+                if(newEmployee!=NULL)
+                {
+                    newEmployee= employee_newParametros(buffer[0], buffer[1], buffer[2], buffer[3]);
+                    ll_add(pArrayListEmployee,newEmployee);
+
+                }else
+                {
+                    printf("ERROR! La carga no se completo\n\n");
+                    break;
+                }
+            }
+
+        }while(!feof(pFile));
+
+        allOK=(!feof(pFile));
+    }
+
+    return allOK;
 }
 
 /** \brief Parsea los datos de los empleados desde el archivo data.csv (modo binario).
@@ -50,6 +58,36 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
  */
 int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 {
+    int allOK=-1;
+    int cant;
 
-    return 1;
+    if(pFile!= NULL)
+    {
+        ll_clear(pArrayListEmployee);//BORRO LA LECTURA ANTERIOR
+
+        do
+        {
+            Employee* newEmployee= employee_new();
+            cant= fread(newEmployee,sizeof(Employee),1,pFile);
+
+            if ( cant == 1 )
+            {
+                if(newEmployee!=NULL)
+                {
+                    ll_add(pArrayListEmployee,newEmployee);
+
+                }else
+                {
+                    printf("ERROR! La carga no se completo\n\n");
+                    break;
+                }
+            }
+
+        }while(!feof(pFile));
+
+        allOK=(!feof(pFile));
+
+    }
+
+    return allOK;
 }

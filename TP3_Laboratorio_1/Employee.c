@@ -35,15 +35,17 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
 
 void employee_delete();
 
-int employee_getId(Employee* this,int* id)
+int employee_getId(Employee* this, int* id)
 {
-    /*int allOK=0;
+    int allOK=0;
 
-    if(this!=NULL)
+    if(this!= NULL)
     {
-        for()
+        *id=*id+1;
+        allOK=employee_setId(this,*id);
     }
-    return allOK;*/
+
+    return allOK;
 }
 
 int employee_setId(Employee* this,int id)
@@ -78,7 +80,6 @@ int employee_getNombre(Employee* this,char* nombre)
         strcpy(this->nombre, nombre);
         allOK=1;
     }
-
     return allOK;
 }
 
@@ -92,7 +93,7 @@ int employee_setNombre(Employee* this,char* nombre)
         {
             for(int i=0;nombre[i]!='\0';i++)
             {
-                if((nombre[i]>'A' && nombre[i]<'Z') || (nombre[i]>'a' && nombre[i]<'z'))
+                if((nombre[i]>='A' && nombre[i]<='Z') || (nombre[i]>='a' && nombre[i]<='z'))
                 {
                     allOK=1;
                 }else
