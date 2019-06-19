@@ -21,11 +21,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 
     if(file!=NULL && pArrayListEmployee!=NULL)
     {
-<<<<<<< HEAD
         allOK= parser_EmployeeFromText(file,pArrayListEmployee);
-=======
-
->>>>>>> 0c1a78d4375fb59966483d6bc3714f33f7a60238
 
         if(allOK==0)
         {
