@@ -209,6 +209,17 @@ void* ll_get(LinkedList* this, int index)
 {
     void* returnAux = NULL;
 
+    Node* pNode = NULL;
+
+    if ( this != NULL && index >= 0 && index < ll_len(this))
+    {
+        pNode = getNode(this, index);
+
+        if ( pNode != NULL )
+        {
+            returnAux = pNode->pElement;
+        }
+    }
     return returnAux;
 }
 
@@ -225,6 +236,20 @@ void* ll_get(LinkedList* this, int index)
 int ll_set(LinkedList* this, int index,void* pElement)
 {
     int returnAux = -1;
+
+    Node* auxNode = NULL;
+
+    if(this != NULL && index >=0 && index < ll_len(this) )
+    {
+
+        auxNode = getNode(this,index); // con esto obtengo el lugar donde quiero meter el elemento
+
+        if(auxNode != NULL)
+        {
+            auxNode->pElement = pElement ;
+        }
+        returnAux=0;
+    }
 
     return returnAux;
 }
@@ -412,8 +437,37 @@ LinkedList* ll_clone(LinkedList* this)
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 {
     int returnAux =-1;
+    void* pAux;
+    void* elementoI;
+    void* elementoJ;
+
+    if( this != NULL && pFunc != NULL && order >= 0 && order <= 1)
+    {
+        for(int i=0; i< (ll_len(this)-1) ; i++)
+        {
+            for(int j= i+1; j < ll_len(this); j++)
+            {
+                elementoI= ll_get(this,i);
+                elementoJ= ll_get(this,j);
+
+                if(order == 1 && pFunc(elementoI,elementoJ) > 0)
+                {
+                    pAux = elementoI;
+                    ll_set(this, i, elementoJ);
+                    ll_set(this, j, pAux);
+                }
+                else if(order == 0 && pFunc(ll_get(this,i), ll_get(this,j)) < 0)
+                {
+                    pAux = elementoI;
+                    ll_set(this, i, elementoJ);
+                    ll_set(this, j, pAux);
+                }
+            }
+        }
+
+        returnAux = 0;
+    }
 
     return returnAux;
-
 }
 
