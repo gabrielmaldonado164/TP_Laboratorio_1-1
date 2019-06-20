@@ -15,9 +15,11 @@ int compareEmployee(void* pEmployeeA,void* pEmployeeB)
         return -1;
     }
     return 0;
-
-
 }
+
+
+
+
 
 void printEmployee(Employee* p)
 {
